@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for i in rec.c
+do
+gcc -Wall -Wextra "$i" -o "${i%.c}" && "./$(i%.c}"
+done
+
