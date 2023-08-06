@@ -16,6 +16,7 @@
 #include <limits.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 
 typedef struct double_comp{
     uint64_t mantissa :52;
@@ -30,40 +31,42 @@ typedef union D{
 
 void print_bit(double d){
 
-    //Запазвам байтовете на double в променливата 
+    //Връщам броя на битовете, които типът заема в паметта 
     uint64_t i = sizeof d * CHAR_BIT;
-    printf("%ld \n" , i);
-    //D d1;
+    //printf("%ld \n" , i);
+    
+    // копира n знака от област на паметта src в област на паметта dest .
+    uint64_t j;
+    memcpy(&j, &d, sizeof(i));
+    //printf("%ld \n" , j);
 
     //обхождам променливата за да видя всеки бит от double
-   // uint64_t j = 64;
     while(i--){
-        printf("%d",  !!(i & 0x1));
+        printf("%ld", (j >> i) & 0x1);
     }
-//   printf ("%d ", (fu.u >> i) & 0x1);
     printf("\n");
+
+    //0100000000001001000111101011100001010001111010111000010100011111
+    //0100000000001001000111101011100001010001111010111000010100011111
+
+    
 }
-//                                01000000010010001111010111000011 // 3.14
-//0000000000000000000000000000000000000111100010111111101111111111
 
 void print_m_e_s(double d){
     D d1;
     d1.d = d;
 
-    printf("%d \n %lu \n %d\n", d1.c.exponent, d1.c.mantissa, d1.c.sign) ;
+    printf("Sign: %d \nExponent: %d \nMantisa: %lu\n", d1.c.sign, d1.c.exponent, d1.c.mantissa) ;
 
 }
 
 
 int main(){
-    
     double d= 3.14;
 
     print_bit(d);
-
     print_m_e_s(d);
     return 0;
-    
 }
 
 
