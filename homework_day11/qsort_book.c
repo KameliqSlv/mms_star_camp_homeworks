@@ -6,10 +6,10 @@
 #define COUNT 10
 
 typedef struct Book{
-    char title[150];        //150
-    char author[100];       //100
-    unsigned pages;          //2
-    double price;           //8
+    char title[150];        
+    char author[100];       
+    unsigned pages;          
+    double price;           
 }Book;
 
 Book books[COUNT];
@@ -51,17 +51,16 @@ int desc_price(const void *a, const void *b) {
 
 
 
-
+/*
 void print_books()
 {
     //Book books[COUNT];
     for (size_t i = 0; i < COUNT; i++)
     {
-       // printf("%s\t\t%s\t\t%hu\t\t%.2f\n", books[i].title, books[i].author, books[i].pages, books[i].price);
         printf("Title: %20s \t Author: %20s \t Pages: %u \t Price: %lf \n", books[i].title, books[i].author, books[i].pages, books[i].price);
     }
 }
-
+*/
 
 
 
@@ -86,24 +85,76 @@ int main(){
 
     }
 
-    printf("ASC: \n");
+
+
+    printf(" \n\t\tBook: \n");
     qsort(books, COUNT, sizeof(Book), asc_title);
-    qsort(books, COUNT, sizeof(Book), asc_author);
-    qsort(books, COUNT, sizeof(Book), asc_pages);
-    qsort(books, COUNT, sizeof(Book), asc_price);
+    for (size_t i = 0; i < COUNT; i++)
+    {
+        printf("Title: %s  \n", books[i].title);
+    }
+    printf("\n");
 
-    print_books();
-  
-    printf("\n\n");
-    printf("DESC: \n");
     qsort(books, COUNT, sizeof(Book), desc_title);
-    qsort(books, COUNT, sizeof(Book), desc_author);
-    qsort(books, COUNT, sizeof(Book), desc_pages);
-    qsort(books, COUNT, sizeof(Book), desc_price);
+    for (size_t i = 0; i < COUNT; i++)
+    {
+        printf("Title: %s \n", books[i].title);
+    }
+    printf("\n");
 
-    print_books();
-   
-  
+
+
+
+    printf(" \n\t\t author: \n");
+    qsort(books, COUNT, sizeof(Book), asc_author);
+    for (size_t i = 0; i < COUNT; i++)
+    {
+        printf("Author: %s  \n", books[i].author);
+    }
+    printf("\n");
+
+    qsort(books, COUNT, sizeof(Book), desc_author);
+     for (size_t i = 0; i < COUNT; i++)
+    {
+        printf("Author: %s  \n", books[i].author);
+    }
+    printf("\n");
+
+
+
+    printf(" \n\t\t Pages: \n");
+    qsort(books, COUNT, sizeof(Book), asc_pages);
+    for (size_t i = 0; i < COUNT; i++)
+    {
+        printf("Pages: %u  \n", books[i].pages);
+    }
+    printf("\n");
+
+    qsort(books, COUNT, sizeof(Book), desc_pages);
+     for (size_t i = 0; i < COUNT; i++)
+    {
+        printf("Pages: %u  \n", books[i].pages);
+    }
+    printf("\n");
+
+
+
+    printf(" \n\t\t Price: \n");
+    qsort(books, COUNT, sizeof(Book), asc_pages);
+    for (size_t i = 0; i < COUNT; i++)
+    {
+        printf("Price: %.2lf  \n", books[i].price);
+    }
+    printf("\n");
+
+    qsort(books, COUNT, sizeof(Book), desc_pages);
+     for (size_t i = 0; i < COUNT; i++)
+    {
+        printf("Price: %.lf  \n", books[i].price);
+    }
+    printf("\n");
+
+
 
     return 0;
 }
