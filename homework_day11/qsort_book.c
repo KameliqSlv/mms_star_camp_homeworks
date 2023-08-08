@@ -15,7 +15,6 @@ typedef struct Book{
 Book books[COUNT];
 
 
-
 int asc_title(const void *a, const void *b) {
     return strcmp(((Book *)a)->title, ((Book *)b)->title);
 }
