@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/kami/Documents/MM_solutions_homework/homework_day12",
-      "program": "/home/kami/Documents/MM_solutions_homework/homework_day12/build/Debug/outDebug",
+      "cwd": "/home/kami/Documents/MM_solutions_homework/homework_day13",
+      "program": "/home/kami/Documents/MM_solutions_homework/homework_day13/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

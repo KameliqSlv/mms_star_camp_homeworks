@@ -13,7 +13,7 @@ int my_printf(const char *fmt, ...){
 
             if(*fmt == 'c'){
                 putc(va_arg(arg, int), stdout);
-                fmt++
+                fmt++;
             } else if (*fmt == 'd'){
                 //char_sum += va_arg(arg, int);
                 printf("%d", va_arg(arg, int));
