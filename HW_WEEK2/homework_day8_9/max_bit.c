@@ -34,7 +34,7 @@ int max_bit(const void *a, const void *b){
 int main(){
     float arr[] = {3.14,3.58,4.25,2.5};
     size_t n = sizeof(arr)/ sizeof(arr[0]);
-    int *max_elem = findMax(arr, n, sizeof(float), max_bit);
+    float *max_elem = findMax(arr, n, sizeof(float), max_bit);
 
     for (size_t i = 0; i<n; i++) {
         printf("%f\n", arr[i]);

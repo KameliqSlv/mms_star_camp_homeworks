@@ -34,7 +34,7 @@ int body_mass_index(const void *a, const void *b){
     double body_mass1 = calculate_mass_index( *(Human*)a, *(Human*)a );
     double body_mass2 = calculate_mass_index( *(Human*)b, *(Human*)b );
     
-    return (body_mass1 - body_mass2)*1.0;
+    return (body_mass2 - body_mass1);
     //return (Human*)b - (Human*)a;
 }
 
